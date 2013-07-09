@@ -1,10 +1,9 @@
 Avar express = require('express');
 
-var fs = require('fs');
-var infile = "index.html";
-var contentBuf = fs.readFileSync(infile);
 var app = express.createServer(express.logger());
 
+var fs = require('fs');
+var buf = readFileSync('index.html');
 app.get('/', function(request, response) {
   response.send(contentBuf.toString());
 });
